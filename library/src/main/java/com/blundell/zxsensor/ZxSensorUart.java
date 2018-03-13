@@ -3,7 +3,7 @@ package com.blundell.zxsensor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 import com.google.android.things.pio.UartDevice;
 import com.google.android.things.pio.UartDeviceCallback;
 
@@ -42,7 +42,7 @@ public class ZxSensorUart implements ZxSensor {
     private DeviceErrorListener deviceErrorListener;
 
     ZxSensorUart(String bus) throws IOException {
-        this(bus, new PeripheralManagerService().openUartDevice(bus));
+        this(bus, PeripheralManager.getInstance().openUartDevice(bus));
     }
 
     ZxSensorUart(String bus, UartDevice device) throws IOException {

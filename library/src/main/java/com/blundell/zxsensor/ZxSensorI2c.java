@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import com.google.android.things.pio.Gpio;
 import com.google.android.things.pio.GpioCallback;
 import com.google.android.things.pio.I2cDevice;
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 
 import java.io.IOException;
 
@@ -150,8 +150,8 @@ public class ZxSensorI2c implements ZxSensor {
         this(
             i2cBus,
             gpioDataNotifyPin,
-            new PeripheralManagerService().openI2cDevice(i2cBus, 0x10),
-            new PeripheralManagerService().openGpio(gpioDataNotifyPin)
+            PeripheralManager.getInstance().openI2cDevice(i2cBus, 0x10),
+            PeripheralManager.getInstance().openGpio(gpioDataNotifyPin)
         );
     }
 
