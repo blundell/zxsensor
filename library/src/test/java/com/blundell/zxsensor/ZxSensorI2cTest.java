@@ -1,8 +1,8 @@
 package com.blundell.zxsensor;
 
 import com.google.android.things.pio.Gpio;
-import com.google.android.things.pio.GpioDriver;
 import com.google.android.things.pio.I2cDevice;
+import com.google.android.things.userdriver.pio.GpioDriver;
 
 import org.junit.Before;
 import org.junit.Test;
